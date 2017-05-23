@@ -26,3 +26,10 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
+.chappelle {
+  border:10px solid blue;
+}
+
+.star {
+  border:10px solid green;
+}
