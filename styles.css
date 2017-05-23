@@ -29,15 +29,15 @@ body, a:link, a:visited, a:active{
 
 .chappelle {
   border:1px solid blue;
-  height: 80px;
-  width: 80px;
-  border-radius: 80px;
+  height: 120px;
+  width: 120px;
+  border-radius: 120px;
   content: url("img/chappelle.gif");
 }
 
 .star {
   border: 1px solid green;
-  height: 80px;
-  width: 100px;
+  height: 120px;
+  width: 140px;
   content: url("img/nyanpatrick.gif");
 }

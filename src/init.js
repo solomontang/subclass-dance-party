@@ -39,18 +39,35 @@ $(document).ready(function() {
   
   $('body').on('click', 'span.dancer', function(event) {
     var shortest = null;
+    var closestEl = null;
+    var originalEl = this;
 
     var pyt = function(x, y) {
       return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)); 
     };
     var top = Number(this.style.top.slice(0, -2));
     var left = Number(this.style.left.slice(0, -2));
-    var pythag = pyt(top, left);
-    
-    console.log();
-    window.dancers.forEach(function (el) {
-      console.log(el);
+
+    window.dancers.forEach(function(el) {
+      var x = Math.abs(left - el.left);
+      var y = Math.abs(top - el.top);
+      var distance = pyt(x, y);
+      if (distance > 0.1 && (shortest === null || distance < shortest)) {
+        shortest = distance;
+        closestEl = el;
+      }
     });
+    
+    $(this).fadeOut();
+    closestEl.$node.fadeOut();
+    $(this).fadeIn();
+    closestEl.$node.fadeIn();
+
+  });
+  
+$('body').on('mouseover', 'span.chappelle', function() {
+    $(this).slideToggle();
+    $(this).slideToggle();
   });
 });
 
