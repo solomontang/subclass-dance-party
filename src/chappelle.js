@@ -10,9 +10,9 @@ makeChappelleDancer.prototype.constructor = makeChappelleDancer;
 makeChappelleDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
   this.$node.mouseover(function() {
-    $(this).flip();
+    $(this).slideToggle();
   });
 };
 makeChappelleDancer.prototype.lineUp = function () {
   this.setPosition(500, this.left);
-};
+}

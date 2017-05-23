@@ -28,3 +28,7 @@ makeDancer.prototype.setPosition = function(top, left) {
 makeDancer.prototype.lineUp = function () {
   this.setPosition(700, this.left);
 };
+
+makeDancer.prototype.partnerUp = function() {
+  
+};

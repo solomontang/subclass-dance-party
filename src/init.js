@@ -36,5 +36,21 @@ $(document).ready(function() {
       ele.lineUp();
     });
   });
+  
+  $('body').on('click', 'span.dancer', function(event) {
+    var shortest = null;
+
+    var pyt = function(x, y) {
+      return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)); 
+    };
+    var top = Number(this.style.top.slice(0, -2));
+    var left = Number(this.style.left.slice(0, -2));
+    var pythag = pyt(top, left);
+    
+    console.log();
+    window.dancers.forEach(function (el) {
+      console.log(el);
+    });
+  });
 });
 
