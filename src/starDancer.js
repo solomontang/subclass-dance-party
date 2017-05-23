@@ -10,8 +10,13 @@ makeStarDancer.prototype.constructor = makeStarDancer;
 
 makeStarDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
-  this.$node.toggle();
+  this.$node.toggle(function() {
+    $(this).animate({height: '100px', width: '120px'}, 'slow');
+  },
+  function () {
+    $(this).animate({height: '80px', width: '100px'}, 'slow');
+  });
 };
 makeStarDancer.prototype.lineUp = function () {
-  this.setPosition(500, this.left);
+  this.setPosition(300, this.left);
 };
