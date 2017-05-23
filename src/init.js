@@ -76,8 +76,8 @@ $(document).ready(function() {
     $(closestEl).fadeIn();
 
   });
-  
-$('body').on('mouseover', 'span.chappelle', function() {
+    
+  $('body').on('mouseover', 'span.chappelle', function() {
     $(this).slideToggle();
     $(this).slideToggle();
   });
