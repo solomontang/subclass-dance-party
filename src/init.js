@@ -78,8 +78,8 @@ $(document).ready(function() {
   });
     
   $('body').on('mouseover', 'span.chappelle', function() {
-    $(this).slideToggle();
-    $(this).slideToggle();
+    $(this).slideUp();
+    $(this).slideDown();
   });
 });
 
