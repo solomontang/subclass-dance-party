@@ -1,6 +1,10 @@
 $(document).ready(function() {
   window.dancers = [];
 
+  var parsePixel = function(string) {
+    return Number(string.slice(0, -2));
+  };
+
   $('.addDancerButton').on('click', function(event) {
     /* This function sets up the click handlers for the create-dancer
      * buttons on dancefloor.html. You should only need to make one small change to it.
@@ -33,6 +37,7 @@ $(document).ready(function() {
 
   $('.lineUp').on('click', function(event) {
     window.dancers.forEach(function (ele) {
+      console.log(ele);
       ele.lineUp();
     });
   });
@@ -45,23 +50,30 @@ $(document).ready(function() {
     var pyt = function(x, y) {
       return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2)); 
     };
-    var top = Number(this.style.top.slice(0, -2));
-    var left = Number(this.style.left.slice(0, -2));
-
-    window.dancers.forEach(function(el) {
-      var x = Math.abs(left - el.left);
-      var y = Math.abs(top - el.top);
+    var top = parsePixel(this.style.top);
+    var left = parsePixel(this.style.left);
+    
+    // debugger;
+    $('.dancer').each(function(i) {
+      // debugger;
+      var el = $('.dancer').get(i);
+      var x = Math.abs(left - parsePixel(el.style.left));
+      var y = Math.abs(top - parsePixel(el.style.top));
       var distance = pyt(x, y);
       if (distance > 0.1 && (shortest === null || distance < shortest)) {
         shortest = distance;
         closestEl = el;
       }
     });
-    
+
     $(this).fadeOut();
-    closestEl.$node.fadeOut();
+    // debugger;
+    $(closestEl).fadeOut();
+
+
+
     $(this).fadeIn();
-    closestEl.$node.fadeIn();
+    $(closestEl).fadeIn();
 
   });
   
