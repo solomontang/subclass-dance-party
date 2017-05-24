@@ -11,7 +11,7 @@ makeStarDancer.prototype.constructor = makeStarDancer;
 makeStarDancer.prototype.step = function() {
   makeDancer.prototype.step.call(this);
 };
+
 makeStarDancer.prototype.lineUp = function () {
-  // this.setPosition(300, this.left);
   this.$node.animate({top: '300px', left: this.left});
 };

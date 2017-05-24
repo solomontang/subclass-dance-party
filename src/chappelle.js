@@ -12,4 +12,4 @@ makeChappelleDancer.prototype.step = function() {
 };
 makeChappelleDancer.prototype.lineUp = function () {
   this.setPosition(500, this.left);
-}
+};
