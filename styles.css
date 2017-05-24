@@ -38,6 +38,6 @@ body, a:link, a:visited, a:active{
 .star {
   border: 1px solid green;
   height: 120px;
-  width: 140px;
+  width: 160px;
   content: url("img/nyanpatrick.gif");
 }

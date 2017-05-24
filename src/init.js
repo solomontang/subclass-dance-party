@@ -37,7 +37,6 @@ $(document).ready(function() {
 
   $('.lineUp').on('click', function(event) {
     window.dancers.forEach(function (ele) {
-      console.log(ele);
       ele.lineUp();
     });
   });
